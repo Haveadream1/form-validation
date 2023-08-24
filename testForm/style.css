@@ -1,6 +1,7 @@
 .success {
-    border: rgb(0,209,0) 2px solid;
+    border: rgb(0,209,0) 2px solid !important;
 }
 .error {
-    border: red 2px solid;
+    border: red 2px solid !important;
 }
+/*Check other style that can overwrite*/
