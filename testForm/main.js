@@ -56,7 +56,6 @@ const checkFormDate = () => {
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  //formSection.style.visibility = 'hidden';
 
   const isFormDateValid = checkFormDate(),
   isFormTextValid = checkFormText();
@@ -65,6 +64,7 @@ form.addEventListener('submit', (event) => {
 
   if (isFormValid) {
     // to submit date to server
+    formSection.style.visibility = 'hidden';
     console.log('Valid form');
   } else {
     console.log('Error in the form');
