@@ -1,6 +1,7 @@
 const textEl = document.querySelector('#form-text');
 const dateEl = document.querySelector('#form-date');
 const form = document.querySelector('#form');
+const formSection = document.querySelector('.form-section')
 
 const isRequired = (value) => {
   if (value === '') {
@@ -29,22 +30,28 @@ const showSuccess = (input) => {
 }
   
 const checkFormText = () => {
+  let valid = false;
   const text = textEl.value.trim();
   if (!isRequired(text)) {
     showError(textEl, 'Please fill this field');
   } else {
     showSuccess(textEl);
+    valid = true;
   }
+  return valid;
 }
 /*(isRequired(text) === false) */
 
 const checkFormDate = () => {
+  let valid = false;
   const date = dateEl.value.trim();
   if (!isRequired(date)) {
     showError(dateEl, 'Please fill this field');
   } else {
     showSuccess(dateEl);
+    valid = true;
   }
+  return valid;
 }
 
 form.addEventListener('submit', (event) => {
@@ -58,6 +65,9 @@ form.addEventListener('submit', (event) => {
 
   if (isFormValid) {
     // to submit date to server
+    console.log('Valid form');
+  } else {
+    console.log('Error in the form');
   }
 });
 
